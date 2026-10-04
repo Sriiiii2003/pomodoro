@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app" id="app" data-mode="work">
+    <h1>Pomodoro Timer</h1>
+
+    <div class="modes" role="tablist" aria-label="Session type">
+      <button class="mode-btn active" data-mode="work" role="tab" aria-selected="true">Work</button>
+      <button class="mode-btn" data-mode="short" role="tab" aria-selected="false">Short Break</button>
+      <button class="mode-btn" data-mode="long" role="tab" aria-selected="false">Long Break</button>
+    </div>
+
+    <div class="timer-ring">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <circle class="ring-bg" cx="60" cy="60" r="54" />
+        <circle class="ring-progress" id="ring" cx="60" cy="60" r="54" />
+      </svg>
+      <div class="time" id="time" aria-live="polite">25:00</div>
+    </div>
+
+    <p class="status" id="status">Time to focus!</p>
+
+    <div class="controls">
+      <button id="startBtn" class="btn primary">Start</button>
+      <button id="pauseBtn" class="btn" disabled>Pause</button>
+      <button id="resetBtn" class="btn">Reset</button>
+    </div>
+
+    <p class="sessions">Completed work sessions: <strong id="count">0</strong></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
